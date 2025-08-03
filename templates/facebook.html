@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar de Facebook</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Descargar Video de Facebook</h1>
+        <form id="downloadForm" data-platform="facebook">
+            <input type="text" name="url" placeholder="Pega el enlace del video" required pattern="https?://.*">
+            <select name="format" required>
+                <option value="mp4">Video (MP4)</option>
+                <option value="mp3">Audio (MP3)</option>
+            </select>
+            <select name="quality" id="qualitySelect">
+                <option value="best">Mejor Calidad</option>
+                <option value="1080p">1080p</option>
+                <option value="720p">720p</option>
+                <option value="360p">360p</option>
+                <option value="144p">144p</option>
+            </select>
+            <button type="submit" class="btn">Descargar</button>
+        </form>
+        <div class="capybaraloader" id="capybaraLoader" role="status" aria-live="polite">
+            <div class="capybara">
+                <div class="capyhead">
+                    <div class="capyear">
+                        <div class="capyear2"></div>
+                    </div>
+                    <div class="capyear"></div>
+                    <div class="capymouth">
+                        <div class="capylips"></div>
+                        <div class="capylips"></div>
+                    </div>
+                    <div class="capyeye"></div>
+                    <div class="capyeye"></div>
+                </div>
+                <div class="capyleg"></div>
+                <div class="capyleg2"></div>
+                <div class="capyleg2"></div>
+                <div class="capy"></div>
+            </div>
+            <div class="loader">
+                <div class="loaderline"></div>
+            </div>
+        </div>
+        <div class="progress-container" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" id="progressBar"></div>
+            <span id="progressText">0%</span>
+        </div>
+        <p id="message"></p>
+        <a href="/" class="btn back-btn">Volver</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/static/js/progress.js"></script>
+</body>
+</html>
